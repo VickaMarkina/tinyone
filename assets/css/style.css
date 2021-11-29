@@ -3515,6 +3515,10 @@ html {
   line-height: 1.15;
 }
 
+h2 {
+  font-size: 32px;
+}
+
 .container {
   max-width: 960px;
   padding-left: 20px;
@@ -3602,4 +3606,118 @@ header {
 .header-navbar_link:hover:after, .header-navbar_link:focus:after {
   width: 100%;
   left: 0;
+}
+
+.slides {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  z-index: -1;
+  display: grid;
+  grid-template-areas: "tit img " "sub img " "tex img " "lin img ";
+  grid-template-rows: minmax(106px, -webkit-max-content) auto 1fr auto;
+  grid-template-rows: minmax(106px, max-content) auto 1fr auto;
+  grid-template-columns: 1fr auto;
+  row-gap: 20px;
+  -webkit-column-gap: 180px;
+     -moz-column-gap: 180px;
+          column-gap: 180px;
+}
+.slide__title {
+  grid-area: tit;
+  align-self: end;
+  margin: 0;
+}
+.slide__subtitle {
+  grid-area: sub;
+  font-size: 20px;
+  margin: 0;
+  display: block;
+}
+.slide__text {
+  grid-area: tex;
+  width: 395px;
+  height: 101px;
+  line-height: 20px;
+  color: #555555;
+  font-weight: 400;
+  margin: 0;
+}
+.slide__links {
+  grid-area: lin;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin-top: 17px;
+  margin-bottom: 4px;
+}
+.slide__links li {
+  margin-right: 35px;
+}
+.slide__links a {
+  color: #010101;
+}
+.slide__links .fa {
+  font-size: 44px;
+}
+.slide__links .fa:hover {
+  text-shadow: 0 0 15px #ffffff;
+}
+.slide__img {
+  grid-area: img;
+  margin-right: 30px;
+  padding-top: 4px;
+}
+
+.slide.active {
+  position: relative;
+  z-index: 1;
+}
+
+.indicators {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
+  padding-top: 40px;
+  padding-bottom: 47px;
+  margin: 0;
+}
+.indicators .indicator {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin-left: 3px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+.indicators .indicator.active {
+  background-color: #ffffff;
+}
+
+.section {
+  padding-top: 113px;
+  padding-bottom: 140px;
+}
+.section h2 {
+  text-align: center;
+  margin: 0px 80px 14px 80px;
+}
+.section p {
+  font-size: 20px;
+  text-align: center;
+  margin: 0px 80px 86px 80px;
+  line-height: 1.2;
 }

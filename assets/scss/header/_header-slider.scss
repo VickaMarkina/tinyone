@@ -1,0 +1,99 @@
+.slides {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  z-index: -1;
+  display: grid;
+  grid-template-areas: "tit img " "sub img " "tex img " "lin img ";
+  grid-template-rows: minmax(106px, max-content) auto 1fr auto;
+  grid-template-columns: 1fr auto;
+  row-gap: 20px;
+  column-gap: 180px;
+
+  &__title {
+    grid-area: tit;
+    align-self: end;
+    margin: 0;
+  }
+
+  &__subtitle {
+    grid-area: sub;
+    font-size: 20px;
+    margin: 0;
+    display: block;
+  }
+
+  &__text {
+    grid-area: tex;
+    width: 395px;
+    height: 101px;
+    line-height: 20px;
+    color: $color-gray;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__links {
+    grid-area: lin;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin-top: 17px;
+    margin-bottom: 4px;
+
+    li {
+      margin-right: 35px;
+    }
+
+    a {
+      color: $color-primary;
+    }
+
+    .fa {
+      font-size: 44px;
+      &:hover {
+        text-shadow: 0 0 15px #ffffff;
+      }
+    }
+  }
+
+  &__img {
+    grid-area: img;
+    margin-right: 30px;
+    padding-top: 4px;
+  }
+}
+
+.slide.active {
+  position: relative;
+  z-index: 1;
+}
+
+.indicators {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-top: 40px;
+  padding-bottom: 47px;
+  margin: 0;
+
+  .indicator {
+    background-color: rgba($color-light, 0.5);
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-left: 3px;
+    margin-right: 3px;
+    cursor: pointer;
+
+    &.active {
+      background-color: $color-light;
+    }
+  }
+}
