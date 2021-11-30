@@ -2,6 +2,12 @@
   padding: 30px 20px 0px 20px;
   display: grid;
   grid-template-columns: auto 1fr;
+  position: relative;
 
-  min-height: 140px;
+  @media (min-width: $md) {
+    min-height: 140px;
+  }
+  @media (max-width: $md) {
+    min-height: 100px;
+  }
 }

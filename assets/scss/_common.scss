@@ -17,8 +17,49 @@ h2 {
 }
 
 .container {
-  max-width: 960px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: $max-width;
+  padding-left: $gap;
+  padding-right: $gap;
   margin: 0 auto;
+}
+
+body.active {
+  overflow-y: hidden;
+  overflow: visible;
+  padding-right: 18px;
+  transition: transform 0.5s;
+  transform: translateX(-214px);
+
+  &::before {
+    content: "";
+    z-index: 10;
+    height: 100%;
+    opacity: 0.85;
+    position: absolute;
+    top: 0;
+    right: 18px;
+    bottom: 0;
+    left: 0;
+    transition: opacity 1s;
+    background-color: $color-primary;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+.footer-text,
+.section-text {
+  @media (min-width: $lg) {
+    margin: 0px 80px 86px 80px;
+  }
+
+  @media (max-width: $lg) and (min-width: $md) {
+    margin: 0px 60px 60px 60px;
+  }
+
+  @media (max-width: $md) {
+    margin: 0px 0px 40px 0px;
+  }
 }
