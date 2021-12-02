@@ -3578,11 +3578,11 @@ header {
       -ms-flex-align: center;
           align-items: center;
 }
-.header-logo_img {
+.header-logo__img {
   margin-right: 10px;
   margin-top: -5px;
 }
-.header-logo_title {
+.header-logo__title {
   font-size: 30px;
   line-height: 20px;
   font-weight: 700;
